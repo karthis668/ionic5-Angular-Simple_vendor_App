@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     My Products
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <!-- <div *ngIf="products_list?.length == 0">
+    <p class="empty_list" padding text-center>Your Products list is empty</p>
+  </div> -->
+  <ion-card *ngFor="let products of productslist" >
+    <ion-card-header class="prod-header">
+      <ion-card-title text-wrap>{{products.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <strong>SKU</strong>
+          </ion-col>
+          <ion-col size="5">
+            <div>{{products.sku}}</div>
+          </ion-col>
+          <ion-col size="3">
+
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <div><strong>QUANTITY</strong></div>
+        </ion-col>
+        <ion-col size="5" class="qty-update">
+          <div>{{products.qty | number:'1.0-0'}}
+            <ion-icon ios="ios-create-outline" md="md-create"></ion-icon>
+          </div>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <div><strong>COST</strong></div>
+        </ion-col>
+        <ion-col size="5">
+          <div>{{products.cost | currency:'INR':'symbol-narrow':'1.2-2'}}</div>
+        </ion-col>
+        <ion-col size="3">
+
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <div><strong>ACTION</strong></div>
+        </ion-col>
+        <ion-col size="5">
+          <ion-toggle (ionChange)="statusChange($event)" [checked]="true"></ion-toggle>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

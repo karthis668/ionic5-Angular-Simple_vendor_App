@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let info of sellerInfo" >
+    <ion-card-header>
+      <ion-card-title *ngIf = "info.name">
+        <ion-row>
+          <ion-col size="5">
+            <strong > Name</strong>
+          </ion-col>
+          <ion-col size="7">
+            {{info.name}}
+          </ion-col>
+        </ion-row>
+       </ion-card-title>
+
+       <ion-card-title *ngIf = "info.description">
+        <ion-row>
+          <ion-col size="5">
+            <strong > Description</strong>
+          </ion-col>
+          <ion-col size="7">
+            {{info.description}}
+          </ion-col>
+        </ion-row>
+       </ion-card-title>
+
+       <ion-card-title *ngIf = "info.sourcecode">
+        <ion-row>
+          <ion-col size="5">
+            <strong> Depot Code</strong>
+            <p appHightlight="'yellow'">Highlighted Text!</p>
+
+          </ion-col>ionic 
+          <ion-col size="7">
+            {{info.sourcecode}}
+          </ion-col>
+        </ion-row>
+       </ion-card-title>
+
+        <ion-card-title *ngIf = "info.status==1">
+        <ion-row>
+          <ion-col size="5">
+            <strong > Status </strong>
+          </ion-col>
+          <ion-col size="7">
+            Active
+          </ion-col>
+        </ion-row>
+       </ion-card-title>
+
+       <ion-card-title *ngIf = "info.created">
+        <ion-row>
+          <ion-col size="5">
+            <strong > Created On</strong>
+          </ion-col>
+          <ion-col size="7">{{info.created | date: "d MMM y"}}
+          </ion-col>
+        </ion-row>
+       </ion-card-title>
+
+       <ion-card-title *ngIf = "info.lifetimesales">
+        <ion-row>
+          <ion-col size="5">
+            <strong > Lifetime Sales</strong>
+          </ion-col>
+          <ion-col size="7">{{info.lifetimesales | currency:'INR':'symbol-narrow':'1.2-2'}}
+          </ion-col>
+        </ion-row>
+       </ion-card-title>
+
+       <ion-card-title *ngIf = "info.pendingamount">
+        <ion-row>
+          <ion-col size="5">
+            <strong > Pending Amount</strong>
+          </ion-col>
+          <ion-col size="7">{{info.pendingamount | currency:'INR':'symbol-narrow':'1.2-2'}}
+          </ion-col>
+        </ion-row>
+       </ion-card-title>
+
+       <!-- <ion-card-title *ngIf = "info.updated">
+        <ion-row>
+          <ion-col size="2">
+            <strong > Updated On</strong>
+          </ion-col>
+          <ion-col size="2">
+            {{info.updated | date: "d MMM y"}}
+          </ion-col>
+        </ion-row>
+       </ion-card-title> -->
+
+
+   </ion-card-header>
+
+
+  </ion-card>
+</ion-content>

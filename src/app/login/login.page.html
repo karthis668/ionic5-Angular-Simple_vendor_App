@@ -1,0 +1,43 @@
+<ion-content>
+
+  <div class="main-logo ion-text-center">
+    <img src="/assets/logo.png" class="main-logo">
+  </div>
+
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <div class="input-group">
+      <ion-card>
+        <ion-item>
+          <ion-label position="stacked">Mobile no</ion-label>
+          <ion-input type="number" formControlName="phone"></ion-input>
+          <ion-icon name="call-outline" class="input-field" slot="start"></ion-icon>
+        </ion-item>
+        <div *ngIf="(errorControl.phone.dirty || errorControl.phone.touched) && errorControl.phone.errors" class="errors">
+          <span *ngIf="errorControl.phone.errors?.required">phone is required</span>
+          <span *ngIf="errorControl.phone.errors?.pattern">phone is invalid</span>
+        </div>
+      </ion-card>
+
+      <ion-card>
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password"  formControlName="password"></ion-input>
+          <ion-icon name="Lock-closed-outline" class="input-field" slot="start"></ion-icon>
+        </ion-item>
+        <div *ngIf="(errorControl.password.dirty || errorControl.password.touched) && errorControl.password.errors" class="errors">
+          <span *ngIf="errorControl.password.errors?.required">Password is required</span>
+          <span *ngIf="errorControl.password.errors?.minlength">Password needs to be 6 characters</span>
+        </div>
+      </ion-card>
+
+    </div>
+
+    <ion-button [disabled]="!credentials.valid" expand="block"  size="large" shape="round" type="submit">
+      <span>
+        LOGIN
+      </span>
+      <ion-icon name="chevron-forward-outline" class="login_submit" slot="end"></ion-icon>
+    </ion-button>
+
+  </form>
+</ion-content>

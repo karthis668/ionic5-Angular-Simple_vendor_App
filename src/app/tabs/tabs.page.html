@@ -1,0 +1,46 @@
+<ion-tabs (ionTabsDidChange)=gettabs($event)>
+
+  <ion-tab-bar slot="bottom" mode="md">
+    <ion-tab-button layout="label-hide" tab="dashboard">
+      <ion-icon 
+      [name]="tabname === 'dashboard' ? 'storefront' : 'storefront-outline'"
+      [size]="tabname === 'dashboard' ? 'large' : ''"></ion-icon>
+      <ion-label>Dashboard</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button layout="label-hide" tab="products">
+      <ion-icon 
+      [name]="tabname === 'products' ? 'cart' : 'cart-outline'"
+      [size]="tabname === 'products' ? 'large' : ''"></ion-icon>
+      <ion-label>Products</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button layout="label-hide" tab="addproduct">
+      <ion-icon
+      [name]="tabname === 'addproduct' ? 'add-circle' : 'add-circle-outline'" size="large"
+      [size]="tabname === 'addproduct' ? 'large' : ''"></ion-icon>
+      <ion-label>Add products</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button layout="label-hide" tab="orders">
+      <ion-icon 
+      [name]="tabname === 'orders' ? 'clipboard' : 'clipboard-outline'"
+      [size]="tabname === 'orders' ? 'large' : ''"></ion-icon>
+      <ion-label>Orders</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button layout="label-hide" tab="transactions">
+      <ion-icon 
+      [name]="tabname === 'transactions' ? 'card' : 'card-outline'" 
+      [size]="tabname === 'transactions' ? 'large' : ''"></ion-icon>
+      <ion-label>Transactions</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
+<!-- 
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab> -->

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item class="ion-no-padding header-item" lines="full" detail>
+      <table class="table-list head" style="table-layout: fixed;">
+        <tr class="blue_color header">
+          <th colspan="2" class="summary_padding">#</th>
+          <th colspan="4" class="summary_padding border_bt primary-shade">AMOUNT</th>
+          <th colspan="4" class="summary_padding border_bt primary-shade">CREATED AT</th>
+        </tr>
+      </table>
+    </ion-item>
+    <!-- <ion-label>{{ordersList}}</ion-label> -->
+    <ion-item class="ion-no-padding booking-lists" *ngFor="let transactions of transactionsList; let i= index" lines="full" detail>
+      <table class="list-items" style="table-layout: fixed;">
+        <tr class="ordersList">
+          <td colspan="2" class="summer_data_padding primary-shade">{{transactions.id}}</td>
+          <td colspan="4" class="summer_data_padding primary-shade">{{transactions.amount | currency:'INR':'symbol-narrow':'1.2-2'}}</td>
+          <td colspan="4" class="summer_data_padding primary-shade">{{transactions.createdat | date: "d MMM y"}}</td>
+        </tr>
+      </table>
+    </ion-item>
+
+
+</ion-content>

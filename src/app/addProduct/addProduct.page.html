@@ -1,11 +1,68 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Add Product
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <app-header [pagename]="'Add Peoduct'">
+    <ion-back-button [text]="" icon="arrow-back"></ion-back-button>
+  </app-header>
 </ion-header>
 
-<ion-content [fullscreen]="true">
- 
+<ion-content>
+  <form [formGroup]="addproductForm" (ngSubmit)="addproduct()">
+
+    <div class="input-group">
+      <ion-item lines="none">
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input formControlName="name" type="text" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">SKU</ion-label>
+        <ion-input formControlName="sku" type="text" name="sku"></ion-input>
+      </ion-item>
+
+
+      <ion-item lines="none">
+        <ion-label position="stacked"> Short Description</ion-label>
+        <ion-input formControlName="shortDescription" type="text" name="shortDescription"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Description</ion-label>
+        <ion-input formControlName="description" type="text" name="description"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Price</ion-label>
+        <ion-input formControlName="price" type="text" name="price"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Weight</ion-label>
+        <ion-input formControlName="weight" type="text" name="weight"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Category</ion-label>
+        <ion-input formControlName="categoryId" type="text" name="categoryId"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Product Type</ion-label>
+        <ion-input formControlName="productType" type="text" name="productType"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Quantity</ion-label>
+        <ion-input formControlName="qty" type="text" name="qty"></ion-input>
+      </ion-item>
+
+      <ion-button class="bgcolor" expand="block" type="submit">
+        <span>
+          Submit
+        </span>
+        <ion-icon name="chevron-forward-outline" class="login_submit" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+
+</form>
+
+
 </ion-content>
